@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Problem4.fs" />
+    <Compile Include="Problem3.fs" />
+    <Compile Include="Problem2.fs" />
+    <Compile Include="Problem1.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.fsproj" />
+  </ItemGroup>
+
+</Project>

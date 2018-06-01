@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Ranges.fs" />
+    <Compile Include="Mathematics.fs" />
+  </ItemGroup>
+
+</Project>
