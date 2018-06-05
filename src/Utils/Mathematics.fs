@@ -2,18 +2,21 @@
 
 module Operations =
 
-    let squareRoot (n:int64) = n |> float |> sqrt |> int64
+    let squareRoot (n:uint64) = n |> float |> sqrt |> uint64
 
 
 module Attributes =
 
-    let isPrime (n:int64) = 
+    let getFactors (n:uint64) = 
         let rec check i =
             if n = i
-                then 1
+                then [|n|]
             else 
-                if n % i = 0L
-                    then 1 + check (i + 1L)
-                else check (i + 1L)
-        (check 1L) <= 2
+                if n % i = 0UL
+                    then Array.append [|i|] (check (i + 1UL))
+                else check (i + 1UL)
+        check 1UL
+
+    let isPrime (n:uint64) = 
+        getFactors n |> Array.length = 2
 

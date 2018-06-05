@@ -1,24 +1,28 @@
 ﻿namespace ``Mathematics tests``
 
-open NUnit.Framework
+open Xunit
+open FsCheck.Xunit
 
 module ``Operations tests`` =
     open Mathematics.Operations
     
-    [<Test>]
-    let ``Square root of 1000*1000 equals 1000``()=
-        let number = 1000L
-        Assert.AreEqual(number, squareRoot (number * number))
+    [<Property>]
+    let ``Square root of n*n equals n`` (n:uint64) =
+        n = squareRoot (n * n)
 
 
 module ``Attributes tests`` =
     open Mathematics.Attributes
 
-    [<Test>]
-    let ``7 is a prime number`` ()=
-        Assert.IsTrue(isPrime 7L)
+    [<Fact>]
+    let ``Number 12 has 6 factors`` ()=
+        Assert.Equal(6, 12UL |> getFactors |> Array.length)
 
-    [<Test>]
+    [<Fact>]
+    let ``7 is a prime number`` ()=
+        Assert.True(isPrime 7UL)
+
+    [<Fact>]
     let ``8 is not a prime number`` ()=
-        Assert.IsFalse(isPrime 8L)
+        Assert.False(isPrime 8UL)
 
