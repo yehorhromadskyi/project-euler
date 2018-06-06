@@ -33,3 +33,10 @@ module ``Problem 5 tests`` =
     let ``Smallest number that can be divided by each of the numbers from 1 to 10`` ()=
         Assert.Equal(2520, findSmallestDivisible 10)
 
+module ``Problem 6 tests`` =
+    open Problem6
+    
+    [<Fact>]
+    let ``Sum square difference`` ()=
+        Assert.Equal(2640, difBetweenSum 10)
+
