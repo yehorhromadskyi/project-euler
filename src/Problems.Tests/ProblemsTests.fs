@@ -1,6 +1,9 @@
 ﻿namespace ``Problems tests``
 
+open Arbitraries
+open FsCheck.Xunit
 open Xunit
+open Mathematics.Attributes
 
 module ``Problem 1 tests`` =
     open Problem1
@@ -22,7 +25,7 @@ module ``Problem 4 tests`` =
     open Problem4
     
     [<Fact>]
-    let ``The largest palindrome made from the product of two 2-digit numbers`` ()=
+    let ``The largest palindrome made from the product of two 2-digit numbers`` () =
         Assert.Equal(9009, largestPalindromeBetween 9 99)
 
 
@@ -30,13 +33,27 @@ module ``Problem 5 tests`` =
     open Problem5
     
     [<Fact>]
-    let ``Smallest number that can be divided by each of the numbers from 1 to 10`` ()=
+    let ``Smallest number that can be divided by each of the numbers from 1 to 10`` () =
         Assert.Equal(2520, findSmallestDivisible 10)
+
 
 module ``Problem 6 tests`` =
     open Problem6
     
     [<Fact>]
-    let ``Sum square difference`` ()=
+    let ``Sum square difference`` () =
         Assert.Equal(2640, difBetweenSum 10)
+
+
+module ``Problem 7 tests`` =
+    open Problem7
+    
+    [<Property(Arbitrary = [|typeof<PositiveIntArbitrary>|])>]
+    let t1 (n:int32) = 
+        primes |> Seq.take n |> Seq.forall (fun i -> isPrime i)
+
+    [<Fact>]
+    let ``6-th prime number`` () =
+        let actual = primeAt 6
+        Assert.Equal(13, actual)
 

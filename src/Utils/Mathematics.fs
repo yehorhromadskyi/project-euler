@@ -4,6 +4,19 @@ module Operations =
 
     let squareRoot (n:uint64) = n |> float |> sqrt |> uint64
 
+    let rec nextPrime n =
+        let nNext = n+1
+        match nNext with
+        | 1 -> 1
+        | 2 -> 2
+        | 3 -> 3
+        | 5 -> 5
+        | n' when n'%2 <> 0 
+               && n'%3 <> 0 
+               && n'%5 <> 0
+               && n'%7 <> 0 -> n'
+        | n' -> nextPrime n'
+
 
 module Attributes =
 

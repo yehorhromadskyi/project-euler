@@ -1,18 +1,30 @@
 ﻿namespace ``Mathematics tests``
 
+open Arbitraries
 open Xunit
+open FsCheck
 open FsCheck.Xunit
+open Mathematics.Attributes
+open Mathematics.Operations
 
 module ``Operations tests`` =
-    open Mathematics.Operations
     
     [<Property>]
     let ``Square root of n*n equals n`` (n:uint64) =
         n = squareRoot (n * n)
 
+    [<Property(Arbitrary = [|typeof<PositiveIntArbitrary>|])>]
+    let ``Next prime number is really prime`` (n:int32) =
+        let next = nextPrime n
+        isPrime (uint64 next) && next > n
+
+    [<Fact>]
+    let t () =
+        let actual = nextPrime 37498
+        Assert.True(actual > 37498)
+
 
 module ``Attributes tests`` =
-    open Mathematics.Attributes
 
     [<Fact>]
     let ``Number 12 has 6 factors`` () =

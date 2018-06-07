@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Arbitraries.fs" />
     <Compile Include="RangesTests.fs" />
     <Compile Include="MathematicsTests.fs" />
   </ItemGroup>
