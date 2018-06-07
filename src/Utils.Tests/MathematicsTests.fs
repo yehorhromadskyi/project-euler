@@ -16,27 +16,22 @@ module ``Operations tests`` =
     [<Property(Arbitrary = [|typeof<PositiveIntArbitrary>|])>]
     let ``Next prime number is really prime`` (n:int32) =
         let next = nextPrime n
-        isPrime (uint64 next) && next > n
-
-    [<Fact>]
-    let t () =
-        let actual = nextPrime 37498
-        Assert.True(actual > 37498)
+        isPrime next && next > n
 
 
 module ``Attributes tests`` =
 
     [<Fact>]
     let ``Number 12 has 6 factors`` () =
-        Assert.Equal(6, 12UL |> getFactors |> Array.length)
+        Assert.Equal(6, 12 |> getFactors |> Array.length)
 
     [<Fact>]
     let ``7 is a prime number`` () =
-        Assert.True(isPrime 7UL)
+        Assert.True(isPrime 7)
 
     [<Fact>]
     let ``8 is not a prime number`` () =
-        Assert.False(isPrime 8UL)
+        Assert.False(isPrime 8)
 
     [<Fact>]
     let ``9009 is a palindrome`` () =

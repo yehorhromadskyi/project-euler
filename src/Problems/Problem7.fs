@@ -8,7 +8,7 @@ let primes =
         Some(next, next)) 1 
 
 let primeAt i =
-    Seq.item i primes
+    Seq.item (i-1) primes
             
     //primeAt 10001
 

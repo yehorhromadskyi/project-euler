@@ -1,6 +1,5 @@
 ﻿namespace ``Problems tests``
 
-open Arbitraries
 open FsCheck.Xunit
 open Xunit
 open Mathematics.Attributes
@@ -18,7 +17,7 @@ module ``Problem 3 tests`` =
     
     [<Fact>]
     let ``The largest prime factor of 13195`` () =
-        Assert.Equal(29UL, largestPrimeFactor 13195UL)
+        Assert.Equal(29, largestPrimeFactor 13195UL)
 
 
 module ``Problem 4 tests`` =
@@ -47,10 +46,6 @@ module ``Problem 6 tests`` =
 
 module ``Problem 7 tests`` =
     open Problem7
-    
-    [<Property(Arbitrary = [|typeof<PositiveIntArbitrary>|])>]
-    let t1 (n:int32) = 
-        primes |> Seq.take n |> Seq.forall (fun i -> isPrime i)
 
     [<Fact>]
     let ``6-th prime number`` () =

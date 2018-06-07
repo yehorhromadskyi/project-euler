@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Ranges.fs" />
     <Compile Include="Mathematics.fs" />
+    <Compile Include="Ranges.fs" />
   </ItemGroup>
 
 </Project>
