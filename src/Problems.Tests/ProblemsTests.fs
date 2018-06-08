@@ -52,3 +52,12 @@ module ``Problem 7 tests`` =
         let actual = primeAt 6
         Assert.Equal(13, actual)
 
+
+module ``Problem 8 tests`` =
+    open Problem8
+
+    [<Fact>]
+    let ``Each block has 4 digits`` () =
+        let actual = f 0 4
+        Assert.True(actual |> Array.forall (fun s -> s.Length = 4))
+
