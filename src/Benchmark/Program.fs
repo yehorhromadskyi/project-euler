@@ -3,12 +3,15 @@
 open System
 open BenchmarkDotNet.Running
 open Problem7Benchmark
+open Problem8Benchmark
 
-let defaultSwitch () = BenchmarkRunner.Run typeof<PrimesGenerator>
+let primesBenchmarks = BenchmarkRunner.Run typeof<PrimesGenerator>
+let stringSplittingBenchmarks = BenchmarkRunner.Run typeof<StringSplitting>
 
 [<EntryPoint>]
 let main argv =
-    let summary = BenchmarkRunner.Run typeof<PrimesGenerator>
+    //BenchmarkRunner.Run typeof<PrimesGenerator>
+    stringSplittingBenchmarks
     Console.ReadLine()
     0 // return an integer exit code
 

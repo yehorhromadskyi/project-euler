@@ -21,11 +21,13 @@ let s = "73167176531330624919225119674426574742355349194934"
       + "05886116467109405077541002256983155200055935729725"
       + "71636269561882670428252483600823257530420752963450"
 
-let rec f i length =
-    if i + length > s.Length
-        then [|""|]
-    else Array.append [|s.Substring(i, length)|] (f (i+1) length)
+let split length =
+    let rec splitRec i =
+        if i + length > s.Length
+            then [|""|]
+        else Array.append [|s.Substring(i, length)|] (splitRec (i+1))
+    splitRec 0
 
-let a = f 0 4
+let a = split 4
 Array.map (fun numberS -> numberS + "A") a
 a |> Array.filter (fun x -> x.Length = 4)
