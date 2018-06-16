@@ -61,3 +61,11 @@ module ``Problem 8 tests`` =
         let actual = greatestMultiplication 4
         Assert.Equal(5832., actual)
 
+module ``Problem 9 tests`` =
+    open Problem9
+
+    [<Fact>]
+    let ``Triplet with arguments (3, 4, 5)`` () =
+        let actual = findTriplet (3 + 4 + 5)
+        Assert.Equal((3, 4, 5), actual)
+
