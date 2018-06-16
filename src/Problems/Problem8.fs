@@ -27,7 +27,12 @@ let split length =
             then [|""|]
         else Array.append [|s.Substring(i, length)|] (splitRec (i+1))
     splitRec 0
+let multiply (s:string) =
+    Array.fold (fun multiplication element -> 
+        (multiplication * System.Char.GetNumericValue(element))) 1. (s.ToCharArray())
+let greatestMultiplication n = split n 
+                            |> Array.filter (fun s -> not (s.Contains("0")))
+                            |> Array.map (fun s -> multiply s) 
+                            |> Array.max
 
-let a = split 4
-Array.map (fun numberS -> numberS + "A") a
-a |> Array.filter (fun x -> x.Length = 4)
+    //greatestMultiplication 13 = 23514624000

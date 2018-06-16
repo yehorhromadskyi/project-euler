@@ -57,7 +57,7 @@ module ``Problem 8 tests`` =
     open Problem8
 
     [<Fact>]
-    let ``Each block has 4 digits`` () =
-        let actual = split 0 4
-        Assert.True(actual |> Array.forall (fun s -> s.Length = 4))
+    let ``Largest product in a series of 4 digits`` () =
+        let actual = greatestMultiplication 4
+        Assert.Equal(5832., actual)
 
