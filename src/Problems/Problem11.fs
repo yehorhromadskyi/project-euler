@@ -98,7 +98,7 @@ let greatestAmongDiagonalsL =
             let dUp = getDiagonalL matrix 0 i
             let dBottom = getDiagonalL matrix (19 - i) 19
             Array.append [|findGreatestProduct dUp 4; findGreatestProduct dBottom 4;|] (fDiagonals (i - 1))
-    fDiagonals 16 |> Array.max
+    fDiagonals 19 |> Array.max
 
 let greatest = [|greatestAmongRows; greatestAmongColumns; greatestAmongDiagonalsR; greatestAmongDiagonalsL|] |> Array.max
 
