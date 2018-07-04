@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="ProblemsTests.fs" />
+    <Compile Include="Problems10Tests.fs" />
   </ItemGroup>
 
   <ItemGroup>

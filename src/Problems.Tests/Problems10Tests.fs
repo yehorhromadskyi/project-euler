@@ -1,4 +1,4 @@
-﻿namespace ``Problems tests``
+﻿namespace ``Problems 1 - 10 tests``
 
 open FsCheck.Xunit
 open Xunit
