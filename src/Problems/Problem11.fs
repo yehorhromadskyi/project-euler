@@ -1,6 +1,6 @@
 module Problem11
 
-open System
+open Mathematics.Operations
 
 let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 "
          + "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 "
@@ -27,11 +27,6 @@ let gridNumbers = grid.Split(' ') |> Array.map (fun n -> n |> int)
 
 let matrix = 
     Array2D.init 20 20 (fun i j -> gridNumbers.[i * 20 + j])
-
-let product (numbers:int[]) =
-    match numbers with
-    | [||] -> 0
-    | _ -> numbers |> Array.fold (fun multiplication element -> (multiplication * element)) 1
 
 let findGreatestProduct (numbers:int[]) digits =
     let rec find i =

@@ -30,6 +30,7 @@ module Attributes =
         firstHalf = System.String(secondHalf.ToCharArray() |> Array.rev)
 
 module Operations =
+
     let squareRoot (n:uint64) = n |> float |> sqrt |> uint64
 
     let rec nextPrime n =
@@ -37,3 +38,8 @@ module Operations =
         if Attributes.isPrime nNext
             then nNext
         else nextPrime nNext
+
+    let product (numbers:int[]) =
+        match numbers with
+        | [||] -> 0
+        | _ -> numbers |> Array.fold (fun multiplication element -> (multiplication * element)) 1

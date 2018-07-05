@@ -18,6 +18,12 @@ module ``Operations tests`` =
         let next = nextPrime n
         isPrime next && next > n
 
+    [<Fact>]
+    let ``Product of numbers in array`` () =
+        let expected = 6 * 7 * 88 * 99
+        let numbers = [|6; 7; 88; 99|]
+        Assert.Equal(expected, product numbers)
+
 
 module ``Attributes tests`` =
 
