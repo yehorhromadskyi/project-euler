@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Utils/Mathematics.fs" />
+    <Compile Include="Utils/Ranges.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Problem12.fs" />
     <Compile Include="Problem11.fs" />
     <Compile Include="Problem10.fs" />
     <Compile Include="Problem9.fs" />
@@ -17,10 +23,6 @@
     <Compile Include="Problem3.fs" />
     <Compile Include="Problem2.fs" />
     <Compile Include="Problem1.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.fsproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,6 @@
 ﻿namespace ``Problems 1 - 10 tests``
 
-open FsCheck.Xunit
 open Xunit
-open Mathematics.Attributes
 
 module ``Problem 1 tests`` =
     open Problem1

@@ -1,22 +1,14 @@
 ﻿namespace ``Mathematics tests``
 
-open Arbitraries
 open Xunit
-open FsCheck
-open FsCheck.Xunit
 open Mathematics.Attributes
 open Mathematics.Operations
 
 module ``Operations tests`` =
     
-    [<Property>]
-    let ``Square root of n*n equals n`` (n:uint64) =
-        n = squareRoot (n * n)
-
-    [<Property(Arbitrary = [|typeof<PositiveIntArbitrary>|])>]
-    let ``Next prime number is really prime`` (n:int32) =
-        let next = nextPrime n
-        isPrime next && next > n
+    [<Fact>]
+    let ``Square root of 635*635 equals 635`` () =
+        Assert.Equal(635UL, squareRoot (635UL * 635UL))
 
     [<Fact>]
     let ``Product of numbers in array`` () =
