@@ -1,7 +1,6 @@
 module Problem12
 
 open Mathematics.Attributes
-open System
 
 let getTriangleNumber n =
     n * (n + 1) / 2
@@ -11,4 +10,4 @@ let findTriangleNumberWithOver divisors =
         if (nthNumber |> getTriangleNumber |> getFactors).Length > divisors
             then getTriangleNumber nthNumber
         else find (nthNumber + 1)
-    find 1        
+    find 1 

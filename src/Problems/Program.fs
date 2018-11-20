@@ -1,15 +1,15 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿open System
+open BenchmarkDotNet.Running
 
-open System
-open Problem12
 
 [<EntryPoint>]
 let main argv =
-    printfn "Calculating triangle number with over 100 divisors"
-    
-    let triangleNumber = findTriangleNumberWithOver 100
-    printfn "The number is %i" triangleNumber
+    BenchmarkRunner.Run typeof<ProblemsRunner.Problem12Runner> |> ignore
 
-    Console.ReadLine()
+    // let triangleNumber = findTriangleNumberWithOver 100
+    // printfn "The number is %i" triangleNumber
+
+    Console.ReadLine() |> ignore
     
     0 // return an integer exit code
+

@@ -24,7 +24,12 @@
     <Compile Include="Problem2.fs" />
     <Compile Include="Problem1.fs" />
 
+    <Compile Include="ProblemsRunner.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.3" />
   </ItemGroup>
 
 </Project>
