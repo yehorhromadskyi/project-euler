@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +23,8 @@
     <Compile Include="Problem3.fs" />
     <Compile Include="Problem2.fs" />
     <Compile Include="Problem1.fs" />
+
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>
