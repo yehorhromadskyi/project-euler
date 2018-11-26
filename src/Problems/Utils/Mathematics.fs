@@ -2,9 +2,21 @@
 
 module Attributes =
 
-    let getFactors (n:int) = 
+    let countFactors n = 
+        let root = n |> float |> sqrt |> int
         let rec check i =
-            if n = i
+            if i = root
+                then 0
+            else 
+                if n % i = 0
+                    then 2 + (check (i + 1))
+                else check (i + 1)
+        check 1
+
+    let getFactors n = 
+        let half = n / 2 |> int
+        let rec check i =
+            if i > half
                 then [|n|]
             else 
                 if n % i = 0

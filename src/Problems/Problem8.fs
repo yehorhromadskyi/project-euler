@@ -34,7 +34,7 @@ let multiply (s:string) =
         
 let greatestMultiplication n = split n 
                             |> Array.filter (fun s -> not (s.Contains("0")))
-                            |> Array.map (fun s -> multiply s) 
+                            |> Array.map (multiply) 
                             |> Array.max
 
     //greatestMultiplication 13 = 23514624000

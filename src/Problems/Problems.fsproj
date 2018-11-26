@@ -24,7 +24,7 @@
     <Compile Include="Problem2.fs" />
     <Compile Include="Problem1.fs" />
 
-    <Compile Include="ProblemsRunner.fs" />
+    <Compile Include="Runners.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
